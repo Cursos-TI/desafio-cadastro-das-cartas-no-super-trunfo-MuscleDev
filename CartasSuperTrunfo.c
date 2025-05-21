@@ -28,6 +28,8 @@ int main() {
     scanf("%f", &pib1);
     printf("Quantos pontos turísticos existem na cidade 1? \n");
     scanf("%d", &turisticos1);
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
     printf("Qual o estado da cidade 2? \n");
     scanf("%c", &estado2);
     printf("Qual o código da carta 2? \n");
