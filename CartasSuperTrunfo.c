@@ -8,6 +8,10 @@ int main() {
     float area1, area2;
     float pib1, pib2;
     int turisticos1, turisticos2;
+    float densidadep1, densidadep2;
+    float percapita1, percapita2;
+
+
 // Aqui foi realizada a declaração de variáveis sempre utilizando a tipo correto e nome significativo para cada variavel.
     printf("Bem-vindo ao Desafio Super Trunfo!\n");
     printf("As cartas serão divididas por estados, cada um com quatro cidades.\nImagine um país dividido em oito estados (A a H), e cada estado com quatro cidades (1 a 4).\nA combinação forma o código da carta (ex: A01, B02).\n");
@@ -24,7 +28,7 @@ int main() {
     scanf("%d", &populacao1);
     printf("Qual a área da cidade 1? \n");
     scanf("%f", &area1);
-    printf("Qual o PIB per capita da cidade 1? \n");
+    printf("Qual o PIB da cidade 1? \n");
     scanf("%f", &pib1);
     printf("Quantos pontos turísticos existem na cidade 1? \n");
     scanf("%d", &turisticos1);
@@ -40,20 +44,28 @@ int main() {
     scanf("%d", &populacao2);
     printf("Qual a área da cidade 2? \n");
     scanf("%f", &area2);
-    printf("Qual o PIB per capita da cidade 2? \n");
+    printf("Qual o PIB da cidade 2? \n");
     scanf("%f", &pib2);
     printf("Quantos pontos turísticos existem na cidade 2? \n");
     scanf("%d", &turisticos2);
-    
 // Aqui foi montado uma serie de questões feitas ao usuário utilizando da função printf e para coletar a resposta foi utilizada a função scanf atentando ao tipo de variavel a ser solicitada.
+
+
+    densidadep1= populacao1/area1;
+    percapita1 = pib1/populacao1;
+    densidadep2 = populacao2/area2;
+    percapita2 = pib2/populacao2;
+// Foram adicionadas as variaveis "densidade populacional" e "PIB per capita" e a forma como devem ser calculculados usando as variaveis fornecidas pelo usuário.
     printf("Carta 1:\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
     printf("Área: %.2f km²\n", area1);
-    printf("PIB per capita: %.2f mil reais\n", pib1);
+    printf("PIB: %.2f mil reais\n", pib1);
     printf("Número de pontos turísticos: %d\n", turisticos1);
+    printf("Densidade populacional: %.2f hab./km²\n", densidadep1);
+    printf("PIB per capita: %.2f mil reais\n", percapita1);
     printf("\n");
     printf("Carta 2:\n");
     printf("Estado: %c\n", estado2);
@@ -61,8 +73,10 @@ int main() {
     printf("Nome da cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
     printf("Área: %.2f km²\n", area2);
-    printf("PIB per capita: %.2f mil reais\n", pib2);
+    printf("PIB: %.2f mil reais\n", pib2);
     printf("Número de pontos turísticos: %d\n", turisticos2);
+    printf("Densidade populacional: %.2f hab./km²\n", densidadep2);
+    printf("PIB per capita: %.2f mil reais\n", percapita2);
     //Por fim foi ultilizada a função printf para mostrar no terminal os dados inseridos pelo usuário e exibidos de forma organizada um em cada linha.
 
     return 0;
