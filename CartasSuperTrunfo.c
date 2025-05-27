@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    char estado1, estado2;
+    char estado1 [10], estado2 [10];
     char codigo1 [20], codigo2 [20];
     char cidade1 [30], cidade2 [30];
     unsigned long int populacao1, populacao2;
@@ -20,7 +20,7 @@ int main() {
 // Aqui utilizei a função printf para exibir no terminal instruções do funcionamento do jogo antes do usuário começar a cadastrar suas cartas.
 
     printf("Qual estado da cidade 1? \n");
-    scanf("%c", &estado1);
+    scanf("%s", estado1);
     printf("Qual o código da carta 1? \n");
     scanf("%s", codigo1);
     printf("Qual o nome da cidade 1? \n");
@@ -36,7 +36,7 @@ int main() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
     printf("Qual o estado da cidade 2? \n");
-    scanf("%c", &estado2);
+    scanf("%s", estado2);
     printf("Qual o código da carta 2? \n");
     scanf("%s", codigo2);
     printf("Qual o nome da cidade 2? \n");
@@ -61,7 +61,7 @@ int main() {
 
 // Foram adicionadas as variaveis "densidade populacional" e "PIB per capita" e a forma como devem ser calculculados usando as variaveis fornecidas pelo usuário.
     printf("Carta 1:\n");
-    printf("Estado: %c\n", estado1);
+    printf("Estado: %s\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da cidade: %s\n", cidade1);
     printf("População: %lu de habitantes\n", populacao1);
@@ -69,16 +69,16 @@ int main() {
     printf("PIB: %.2f mil reais\n", pib1);
     printf("Número de pontos turísticos: %d\n", turisticos1);
     printf("Densidade populacional: %.2f hab./km²\n", densidadep1);
-    printf("PIB per capita: %.2f mil reais\n", percapita1);
+    printf("PIB per capita: %.3f mil reais\n", percapita1);
     printf("SUPER PODER: %.2f",superpoder1 );
     printf("\n");
     printf("Carta 2:\n");
-    printf("Estado: %c\n", estado2);
+    printf("Estado: %s\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Nome da cidade: %s\n", cidade2);
     printf("População: %lu de habitantes\n", populacao2);
     printf("Área: %.2f km²\n", area2);
-    printf("PIB: %.2f mil reais\n", pib2);
+    printf("PIB: %.3f mil reais\n", pib2);
     printf("Número de pontos turísticos: %d\n", turisticos2);
     printf("Densidade populacional: %.2f hab./km²\n", densidadep2);
     printf("PIB per capita: %.2f mil reais\n", percapita2);
@@ -86,13 +86,67 @@ int main() {
 
     //Por fim foi ultilizada a função printf para mostrar no terminal os dados inseridos pelo usuário e exibidos de forma organizada um em cada linha.
     printf("\n\n\n");
-    printf("Comparador de cartas(1 para verdadeiro – Carta 1 vence – e 0 para falso – Carta 2 vence)\n");
-    printf("População: %d\n", populacao1>populacao2);
-    printf("Área: %d\n", area1>area2);
-    printf("PIB: %d\n", pib1>pib2);
-    printf("Pontos turísticos: %d\n", turisticos1>turisticos2);
-    printf("Densidade populacional: %d\n", densidadep1<densidadep2);
-    printf("PIB per capita: %d\n", percapita1>percapita2);
-    printf("SUPER PODER: %d\n", superpoder1>superpoder2);
+    printf("Comparador de cartas por atributos:\n");
+
+    if (populacao1>populacao2) {
+        printf("População: Carta 1 venceu!\n");
+    }else {
+        printf("População: Carta 2 venceu!\n");
+    }
+
+    if (area1>area2) {
+        printf("Área: Carta 1 venceu!\n");
+    }else{
+        printf("Área: Carta 2 venceu!\n");
+    }
+
+    if (pib1>pib2) {
+        printf("PIB: Carta 1 venceu!\n");
+    }else{
+        printf("PIB: Carta 2 venceu!\n");
+    }
+
+    if (turisticos1>turisticos2) {
+        printf("Pontos turísticos: Carta 1 venceu!\n");
+    }else {
+        printf("Pontos turísticos: Carta 2 venceu!\n");
+    }
+
+    if (densidadep1<densidadep2) {
+        printf("Densidade populacional: Carta 1 venceu!\n");
+    }else {
+        printf("Densidade populacional: Carta 2 venceu!\n");
+    }
+
+    if (percapita1>percapita2) {
+        printf("PIB per capita: Carta 1 venceu!\n");
+    }else {
+        printf("PIB per capita: Carta 2 venceu!\n");
+    }
+
+    if (superpoder1>superpoder2) {
+        printf("SUPER PODER: Carta 1 venceu!\n");
+    }else {
+        printf("SUPER PODER: Carta 2 venceu!\n");
+    }
+// Utilizando do condicional if e else exibiu-se no terminal qual carta venceu na disputa em cada atributo.
+
     return 0;
 }
+/* INFORMAÇÕES PARA O TESTE
+Qual estado da cidade 1? RS
+Qual o código da carta 1? RS1
+Qual o nome da cidade 1? POA
+Qual a população da cidade 1? 1332570
+Qual a área da cidade 1? 495.39
+Qual o PIB da cidade 1? 76074563.08
+Quantos pontos turísticos existem na cidade 1? 40
+
+Estado: SC
+Código: SC1
+Nome da cidade 2: FLORIPA
+População: 537211
+Área: 674.84
+PIB: 21312446.73
+Número de pontos turísticos: 100
+*/
