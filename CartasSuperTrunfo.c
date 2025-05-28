@@ -11,6 +11,7 @@ int main() {
     float densidadep1, densidadep2;
     float percapita1, percapita2;
     float superpoder1, superpoder2;
+    int opcao;
 
 
 // Aqui foi realizada a declaração de variáveis sempre utilizando a tipo correto e nome significativo para cada variavel.
@@ -60,6 +61,8 @@ int main() {
     superpoder2 = populacao2+area2+pib2+turisticos2+(1/ densidadep2)+percapita2;
 
 // Foram adicionadas as variaveis "densidade populacional" e "PIB per capita" e a forma como devem ser calculculados usando as variaveis fornecidas pelo usuário.
+    
+    printf("Cartas cadastradas:\n");
     printf("Carta 1:\n");
     printf("Estado: %s\n", estado1);
     printf("Código: %s\n", codigo1);
@@ -86,25 +89,71 @@ int main() {
 
     //Por fim foi ultilizada a função printf para mostrar no terminal os dados inseridos pelo usuário e exibidos de forma organizada um em cada linha.
     printf("\n\n\n");
-    printf("Comparador de cartas por atributos:\n");
+    printf("Agora que você já cadastrou as cartas, escolha qual atributo irá comparar:\n");
+    printf("1- População\n");
+    printf("2- Área\n");
+    printf("3- PIB\n");
+    printf("4- Número de pontos turísticos\n");
+    printf("5- Densidade demográfica\n");
+    printf("6- PIB per capita\n");
+    printf("7- Super poder\n");
+    printf("Qual número referente ao atríbuto você escolhe? ");
+    scanf("%d", &opcao);
 
-    if (populacao1>populacao2) {
+
+    switch (opcao)
+    {
+    case 1:
+        printf("Carta 1: Código: %s\n Nome da cidade: %s\n População: %lu habitantes\n", codigo1, cidade1, populacao1);
+        printf("Carta 2: Código: %s\n Nome da cidade: %s\n População: %lu habitantes\n", codigo2, cidade2, populacao2);
+             if (populacao1>populacao2) {
         printf("População: Carta 1 venceu!\n");
-    }else {
+    }else if (populacao1==populacao2)
+    {
+        printf("Empate!");
+    }else
+     {
         printf("População: Carta 2 venceu!\n");
     }
-
-    if (area1>area2) {
+        break;
+    case 2:
+        printf("Carta 1: Código: %s\n Nome da cidade: %s\n Área: %.2f km²", codigo1, cidade1, area1);
+        printf("Carta 2: Código: %s\n Nome da cidade: %s\n Área: %.2f km²", codigo2, cidade2, area2);
+            if (area1>area2) {
         printf("Área: Carta 1 venceu!\n");
+    }else if (area1==area2)
+    {
+        printf("Empate!");
     }else{
         printf("Área: Carta 2 venceu!\n");
     }
-
-    if (pib1>pib2) {
+        break;
+    case 3:
+        printf("Carta 1: Código: %s\n Nome da cidade: %s\n PIB: %.3f mil reais", codigo1, cidade1, pib1);
+        printf("Carta 2: Código: %s\n Nome da cidade: %s\n PIB: %.3f mil reais", codigo2, cidade2, pib2);
+            if (pib1>pib2) {
         printf("PIB: Carta 1 venceu!\n");
+    }else if (pib1==pib2)
+    {
+        printf("Empate!");
     }else{
         printf("PIB: Carta 2 venceu!\n");
     }
+        break;
+    
+    default:
+    printf("Opção invalida!");
+        break;
+    }
+/*printf("Comparador de cartas por atributos:\n");
+
+
+
+
+
+
+
+
 
     if (turisticos1>turisticos2) {
         printf("Pontos turísticos: Carta 1 venceu!\n");
@@ -128,7 +177,7 @@ int main() {
         printf("SUPER PODER: Carta 1 venceu!\n");
     }else {
         printf("SUPER PODER: Carta 2 venceu!\n");
-    }
+    }*/
 // Utilizando do condicional if e else exibiu-se no terminal qual carta venceu na disputa em cada atributo.
 
     return 0;
